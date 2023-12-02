@@ -14,3 +14,4 @@ In python, I use dict() to complete this, something to review are  as follows:
    for idx, x in enumerate(xs):
       print(idx, x)
 ```
+>+ which means traverse array nums
