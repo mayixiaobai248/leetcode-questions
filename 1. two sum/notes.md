@@ -10,7 +10,7 @@ In python, I use dict() to complete this, something to review are  as follows:
 
 **2.  for index, value in enumerate(nums)**
 
-'''
+```
    for idx, x in enumerate(xs):
       print(idx, x)
-'''
+```
