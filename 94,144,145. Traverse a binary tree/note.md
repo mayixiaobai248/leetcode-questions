@@ -8,3 +8,6 @@ We use recursion method to traverse binary tree. There are three orders to trave
 In these questions, we use left and right to record left-subtree and right-subtree, the data structure of them are list. 
 
 Finally, we return the combination of list of three parts. (for example, left+[root.val]+right)
+
+**Something need to know:**
+add three list:[a,b,c]+[d,e,f,g]+[]+[h]=[a,b,c,d,e,f,g,h], we use this to return value.
