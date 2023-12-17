@@ -1,3 +1,7 @@
+#Sliding window question
+
+<font color='red'> need to do again!!</font>
+<font color='blue'> have done twice</font>
 we use slide window to solve this question, we use heapq as a dist to record frequency of number inside the window, 
 
 if the frequence>1,then, it is deplicate and need to change the left side of window.

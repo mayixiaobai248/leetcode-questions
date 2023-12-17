@@ -1,6 +1,7 @@
 We use recursion method to traverse binary tree. There are three orders to traversal: preorder, inorder and postorder.
 
 **About Recursion**
+>
 >+ (1) determine the return value and parameters
 >+ (2) determine the stopping condition
 >+ (3) confirm the single-layer recursion logic
