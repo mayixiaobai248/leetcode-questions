@@ -1,5 +1,7 @@
-some little things to know:
->+ we use [left,right) to solve.
->+ the loop condition is left<right (left==right is nonsense)
->+ if: right=middle (because we don't need right), left=middle+1
->+ remember:middle=left+(right-left)//2
+典型的二分查找法算法题，首先是有两个条件要注意一下：
+- 数组是有序数组
+- 数组无重复元素
+
+那么这道题一共有两种写法，分别对应的是[left , right]和[left, right)，在这里我们只讨论第一种。主要就是看有没有意义以及这个值是否被取过
+- 循环条件使用while(left <= right): 因为这里=是有意义的
+- 变更条件使用right = middle - 1，因为我们已经验证了middle不是target

@@ -1,18 +1,18 @@
+
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        maxres=0
-        heapq=defaultdict(int)
-        window=deque()
+        length = 0
+        window = deque()
+        letter=defaultdict(int)
 
         for i in s:
-            heapq[i]=heapq[i]+1
+            letter[i] = letter[i]+1
             window.append(i)
 
-            if heapq[i]>1:
-                while heapq[i]>1:
-                    temp=window.popleft()
-                    heapq[temp]=heapq[temp]-1
-
-            maxres=max(maxres,len(window))
-
-        return maxres
+            if letter[i] > 1:
+                while letter[i] >1:
+                    window.popleft()
+                    letter[i]=letter[i]-1
+            
+            length=max(length,len(window))
+        return length
