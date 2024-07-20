@@ -14,3 +14,5 @@ sorted_numbers = sorted(numbers)
 ```
 
 ### 或者可以使用双指针法
+
+left指针指向最左边的元素， right指针指向最右边的元素，两者相比较再移动。

@@ -16,5 +16,12 @@ don't need to do another time, just one thing:
             return 0
         else:
             return minlen
+            
+       # or
+       return minlen if minlen != float('inf') else 0
 ```
 notify the first return sentence, it is necessary.
+
+# 7.20日重刷第一遍
+
+想到用滑动窗口的方法去做这道题， 出问题的点主要是在更新长度以及left -- 的顺序，但是很容易debug，因为离正确答案总是差一
