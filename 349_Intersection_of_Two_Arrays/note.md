@@ -21,5 +21,8 @@ only one thing: traversal the dict:
    my_dict = {'a': 1, 'b': 2, 'c': 3}
    for key, value in my_dict.items():
        print(key, value)
-
+   
    note .values() and .items()
+
+# 7.22重刷
+做得很快，四五分钟做完的，思路就是两个数组都取set(), 直接check，可以看py文件
