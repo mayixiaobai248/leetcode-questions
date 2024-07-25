@@ -26,6 +26,35 @@
 >
 >+ 先遍历背包，后遍历物品，反过来也行。
 
+```python
+# 这个是自己写的
+def test():
+    all_value = 6
+    weight = [2, 2, 3, 1, 5, 2]
+    value = [2, 3, 1, 5, 4, 3]
+    bagweight = 1
+
+    dp = [[0]*(bagweight + 1) for _ in range(all_value)]
+
+    for j in range(bagweight + 1):
+        if j >= weight[0]:
+            dp[0][j] = value[0]
+            
+    for i in range(1, all_value):
+        for j in range(bagweight + 1):
+            if j < weight[i]:
+                dp[i][j] = dp[i-1][j]
+            else:
+                dp[i][j] = max(dp[i-1][j] , dp[i-1][j-weight[i]] + value[i])
+            
+    return dp[all_value-1][bagweight]
+  
+```
+
+在我自己写的时候出现了几个问题：
+>+ 首先是dp数组的规格，因为物品是根据下标走的，可以从[0, len(value)-1]，但是对于背包容量，j是多少就是多少，所以j需要[0, bagweight]
+>+ 其次开始在遍历的时候我没有写判断语句，一直报错list out of range，后来发现一个是i要从下表1开始遍历，因为i = 0已经赋值了，其次dp[i-1][j-weight[i]] 要保证是合法的，也就是说j要大于weight[i]，仔细想一下如果j小于weight[i]，那么根本装不了这件物品
+
 # 01 背包的一维数组解法
 
 我们发现：
