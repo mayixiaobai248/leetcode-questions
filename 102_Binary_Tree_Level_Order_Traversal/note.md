@@ -20,3 +20,29 @@ Can write all the code by myself in 10 min, but there are two things to pay atta
 >    return []
 >```
 >+ use deque() to store instead of list
+
+# third time
+使用递归的方法去做，更简单方便
+```python
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if root is None:
+            return 
+
+        levels = []
+        def traverse(node, level):
+            if node is None:
+                return 
+            
+            if len(levels) == level:
+                levels.append([])
+            
+            levels[level].append(node.val)
+            traverse(node.left, level+1)
+            traverse(node.right, level+1)
+
+        traverse(root, 0)
+        return levels
+```
+层序遍历嘛，首先如果是新的一层的话需要加一个[]
+如果确定节点是在这一层，那么往这里面填充数值
